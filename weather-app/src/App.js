@@ -24,14 +24,14 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          Sun Or Snow
+          WeatherPal
         </header>
+        <h1>Get the current temperature of any city in the world.</h1>
         <main>
-          <h1>Get current temperature of any city in the world!</h1>
           <div className="input-section">
             <label>Enter city name</label>
             <input id="location-input" type="text" placeholder="Enter location"></input>
-            <button onClick={this.getData}>Submit</button>
+            <button id="submit-button" onClick={this.getData}>Submit</button>
           </div>      
             <LocationData data={this.state.weatherData} location={this.state.location} />
         </main>
