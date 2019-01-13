@@ -17,7 +17,8 @@ class App extends Component {
     .then(data => this.setState({
       weatherData : data.consolidated_weather,
       location : data.title
-    }));
+    }))
+    .catch((e) => WeatherAPI.showErrorMessage(e))
   }
 
   render() {

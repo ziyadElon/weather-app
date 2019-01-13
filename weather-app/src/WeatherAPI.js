@@ -2,7 +2,8 @@ const api = "https://www.metaweather.com/api/location";
 const proxyUrl = "https://cors.io/?";
 const url = proxyUrl + api;
 
-const showErrorMessage = (error) => {
+export const showErrorMessage = (error) => {
+  document.querySelector('.error-block').style.display = "block";
   console.log("There was an error: " + error.message)
 }
 
@@ -19,7 +20,7 @@ export const getWeatherData = (woeid) => {
 
 export const getWoeid = (city) => {
   let locationUrl = `${url}/search/?query=${city}`;
-
+  document.querySelector('.error-block').style.display = "none";
   return fetch(locationUrl)
     .then(response => response.json())
     .then(data => data[0].woeid,
